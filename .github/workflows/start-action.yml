@@ -1,14 +1,16 @@
+name: Manual Start
+
 on:
   workflow_dispatch:
     deploy-destination:
-        description: 'Environment'     
-        required: true
-        default: 'dev' 
-        type: development
-        options:
-        - development
-        - staging
-        - production 
+      description: 'Environment'     
+      required: true
+      default: 'development'
+      type: choice
+      options:
+      - development
+      - staging
+      - production 
 
 jobs:
   hello_world_job:
