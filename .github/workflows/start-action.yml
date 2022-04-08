@@ -12,7 +12,6 @@ on:
         - development
         - staging
         - production
-
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
