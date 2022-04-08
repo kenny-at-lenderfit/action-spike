@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - id: foo
-        uses: ./.github/workflows/action
+        uses: ./.github/workflows/action.yml
         with:
           who-to-greet: ${{ github.event.inputs.deploy-destination }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
