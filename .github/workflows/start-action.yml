@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: action.yml
+        uses: ./.github/workflows
         with:
           who-to-greet: ${{ github.event.inputs.deploy-destination }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
