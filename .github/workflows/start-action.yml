@@ -1,5 +1,4 @@
 name: Manual Start
-
 on:
   workflow_dispatch:
     deploy-destination:
@@ -11,7 +10,6 @@ on:
       - development
       - staging
       - production
-
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
