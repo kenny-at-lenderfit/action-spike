@@ -12,6 +12,7 @@ on:
         - development
         - staging
         - production
+        
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
@@ -19,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: ./.github/workflows/action.yaml
+        uses: ./.github/workflows/action.yml
         with:
           who-to-greet: ${{ github.event.inputs.deploy-destination }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
