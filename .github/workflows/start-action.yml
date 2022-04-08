@@ -1,15 +1,16 @@
 name: Manual Start
 on:
   workflow_dispatch:
-    deploy-destination:
-      description: 'Environment'     
-      required: true
-      default: 'development'
-      type: choice
-      options:
-      - development
-      - staging
-      - production
+    inputs:
+      deploy-destination:
+        description: 'Environment'     
+        required: true
+        default: 'development'
+        type: choice
+        options:
+        - development
+        - staging
+        - production
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
