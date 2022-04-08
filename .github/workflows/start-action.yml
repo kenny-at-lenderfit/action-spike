@@ -1,5 +1,14 @@
 on:
   workflow_dispatch:
+    deploy-destination:
+        description: 'Environment'     
+        required: true
+        default: 'dev' 
+        type: development
+        options:
+        - development
+        - staging
+        - production 
 
 jobs:
   hello_world_job:
@@ -9,5 +18,5 @@ jobs:
       - id: foo
         uses: ../action
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: ${{ github.event.inputs.deploy-destination }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
